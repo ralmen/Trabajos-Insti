@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Resumen de caracteres ASCII</title>
+		<meta charset="UTF-8">
+		<script>
+			function g1()
+			{
+				document.getElementById('grupo1').innerHTML='<tr><td>Codigo</td><td>Caracter</td></tr>';
+				for (var i=32;i<127;i++)
+				{
+					document.getElementById('grupo1').innerHTML+='<tr><td>'+ i +'</td><td>'+ String.fromCodePoint(i) +'</td></tr>';
+				}
+				document.getElementById('grupo2').innerHTML='<tr><td>Codigo</td><td>Caracter</td></tr>';
+				for (var i=128;i<=255;i++)
+				{
+					document.getElementById('grupo2').innerHTML+='<tr><td>'+ i +'</td><td>'+ String.fromCodePoint(i) +'</td></tr>';
+				}
+				document.getElementById('grupo2').style='display: none';
+			}
+			function cambiar()
+			{
+				var B=document.getElementById('boton');
+				if(B.innerHTML=='Ir al Grupo 2')
+				{
+					document.getElementById('grupo1').style='display: none';
+					document.getElementById('grupo2').style='display: block';
+					B.innerHTML='Ir al Grupo 1';
+				}else{
+					document.getElementById('grupo1').style='display: block';
+					document.getElementById('grupo2').style='display: none';
+					B.innerHTML='Ir al Grupo 2';
+				}
+			}	
+		</script>
+	</head>
+	<body onload="g1();">
+		<button id="boton" onclick="cambiar();">Ir al Grupo 2</button>
+		<table id="grupo1"></table>
+		<table id="grupo2"></table>
+	</body>
+</html>

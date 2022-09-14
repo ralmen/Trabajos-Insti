@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Calculadora de Raul</title>
+		<meta name="author" content="Raúl"/>
+		<meta name="keywords" content="Pagina web calculadora"/>
+		<meta name="description" content="Esta es una pagina web en la que encontraras una calculadora que puede usar para realizar sumas."/>
+		<script>
+			var n1;
+			var n2;
+			var operar;
+			function sumar() {
+				n1 = document.getElementById('Pantalla').value;
+				operar = 'sumar';
+				document.getElementById('Pantalla').value = '';
+				document.getElementById('Pantalla').focus();
+			}
+			function restar() {
+				n1 = document.getElementById('Pantalla').value;
+				operar = 'restar';
+				document.getElementById('Pantalla').value = '';
+				document.getElementById('Pantalla').focus();
+			}
+			function multiplicar() {
+				n1 = document.getElementById('Pantalla').value;
+				operar = 'multiplicar';
+				document.getElementById('Pantalla').value = '';
+				document.getElementById('Pantalla').focus();
+			}
+			function dividir() {
+				n1 = document.getElementById('Pantalla').value;
+				operar = 'dividir';
+				document.getElementById('Pantalla').value = '';
+				document.getElementById('Pantalla').focus();
+			}
+			function elevar() {
+				n1 = document.getElementById('Pantalla').value;
+				operar = 'elevar';
+				document.getElementById('Pantalla').value = '';
+				document.getElementById('Pantalla').focus();
+			}
+			function porcentaje() {
+				n1 = document.getElementById('Pantalla').value;
+				operar = 'porcentaje';
+				document.getElementById('Pantalla').value = '';
+				document.getElementById('Pantalla').focus();
+			}
+			function calcular() {
+				n2 = document.getElementById('Pantalla').value;
+				if(operar == 'sumar'){
+				document.getElementById('Pantalla').value = parseFloat(n1) + parseFloat(n2);
+				}
+				if(operar == 'restar'){
+				document.getElementById('Pantalla').value = parseFloat(n1) - parseFloat(n2);
+				}
+				if(operar == 'multiplicar'){
+				document.getElementById('Pantalla').value = parseFloat(n1) * parseFloat(n2);
+				}
+				if(operar == 'dividir'){
+				document.getElementById('Pantalla').value = parseFloat(n1) / parseFloat(n2);
+				}
+				if(operar == 'elevar'){
+				document.getElementById('Pantalla').value = parseFloat(n1) ** parseFloat(n2);
+				}
+				if(operar == 'porcentaje'){
+				document.getElementById('Pantalla').value = parseFloat(n1) * parseFloat(n2) / 100;
+				}
+			}
+		</script>
+		<style>
+			#forma {
+				text-align: center;
+				border: 1px solid black;
+				border-radius: 5px;
+				width: 300px;
+				margin: auto;
+				font-family: Arial;
+				background-color: #0FF2EB;
+			}
+			#Pantalla {
+				border-top: 1px solid black;
+				border-radius: 10px;
+				background-color: #DB0BD8;
+				text-align: right;
+				height: 40px;
+				width: 250px;
+				font-size: 200%;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="forma">
+			<h1>Calculadora</h1>
+			<input type="text" Id="Pantalla"/><br/><br/>
+			<input type="button" value="+" onclick="sumar()" title="Sumar"/>
+			<input type="button" value="-" onclick="restar()" title="Restar">
+			<input type="button" value="x" onclick="multiplicar()" title="Multiplicar"/>
+			<input type="button" value="/" onclick="dividir()" title="Dividir"/>
+			<input type="button" value="^" onclick="elevar()" title="Elevar"/>
+			<input type="button" value="%" onclick="porcentaje()" title="Porcentaje del numero 2 sobre el numero 1"/>
+			<input type="button" value="=" onclick="calcular()" title="Calcula el resultado final"/>
+			<input type="reset" value="Borrar"/><br/><br/>
+		</form>
+	</body>
+</html>

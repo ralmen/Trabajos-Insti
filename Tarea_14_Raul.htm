@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Tabla de Multiplicaciones</title>
+		<meta charset="UTF-8">
+		<script>
+		function tablas() {
+			var n = 0;
+			while(n < 10) {
+				for(var i=1; i<=10; i++) 
+					{
+					document.getElementById(n).innerHTML += n + ' x ' + i + ' = ' + n*i + '<br>';
+					}
+				n++;
+			}
+		}
+		</script>
+		<style>
+		td {
+		border: 1px solid;
+		background-color: #27CBD3;
+		}
+		tr {
+		border: 1px solid;
+		}
+		table {
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid;
+		}
+		</style>
+	</head>
+	<body onload = "tablas()">
+		Tabla de Multiplicaciones
+		<table>
+			<tr>
+				<td id="0"></td>
+				<td id="1"></td>
+				<td id="2"></td>
+				<td id="3"></td>
+				<td id="4"></td>
+			</tr>
+			<tr>
+				<td id="5"></td>
+				<td id="6"></td>
+				<td id="7"></td>
+				<td id="8"></td>
+				<td id="9"></td>
+			</tr>
+		</table>
+	</body>
+</html>

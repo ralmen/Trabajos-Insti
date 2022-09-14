@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Temporizador de Raul</title>
+		<script>
+			var semana = ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+			function calendario() {
+				var fecha = new Date();
+				var dia_semana = fecha.getDay();
+				var cal = semana[dia_semana] + ', ' + fecha.toLocaleDateString();
+				document.getElementById('dia').innerHTML = cal;
+				document.getElementById('hora').innerHTML = fecha.toLocaleTimeString();
+			}
+			var temporizador = setInterval(calendario, 1000);
+		</script>
+		<style>
+		#cuadro {
+		border: 1px solid;
+		width: 150px;
+		background-color: #27CBD3;
+		border-radius: 5px;
+		}
+		#dia {
+		text-align: center;
+		font-family: Arial;
+		color: #E65867;
+		}
+		#hora {
+		text-align: center;
+		font-family: Arial;
+		color: #E3A15B;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="cuadro">
+			<h1 id="dia"></h1>
+			<h1 id="hora"></h1>
+		</div>
+	</body>
+</html>
